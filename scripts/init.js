@@ -490,7 +490,10 @@ var pickerUI = new PickerUI(myPicker, {
         sharedListContainer: "#shared-list-modal",
         sharedList: "#shared-list",
         sharedListContinue: "#shared-list-continue",
-        sharedListSkip: ".shared-list-skip"
+        sharedListSkip: ".shared-list-skip",
+        settings: {
+            maxBatchSize: '#max-batch-size'
+        }
     }
 });
 
