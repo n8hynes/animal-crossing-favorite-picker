@@ -492,6 +492,7 @@ var pickerUI = new PickerUI(myPicker, {
         sharedListContinue: "#shared-list-continue",
         sharedListSkip: ".shared-list-skip",
         settings: {
+            minBatchSize: '#min-batch-size',
             maxBatchSize: '#max-batch-size'
         }
     }

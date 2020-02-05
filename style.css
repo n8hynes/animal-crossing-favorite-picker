@@ -267,5 +267,9 @@ button.disabled:hover {
 #settings {
     display:none;
     overflow:hidden;
+    font-size:smaller;
 }
 
+#max-batch-size, #min-batch-size {
+    width:3em;
+}
