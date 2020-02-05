@@ -264,3 +264,12 @@ button.disabled:hover {
     margin:0 0.2em;
 }
 
+#settings {
+    display:none;
+    overflow:hidden;
+    font-size:smaller;
+}
+
+#max-batch-size, #min-batch-size {
+    width:3em;
+}

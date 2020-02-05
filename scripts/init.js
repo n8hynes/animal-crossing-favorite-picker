@@ -490,7 +490,11 @@ var pickerUI = new PickerUI(myPicker, {
         sharedListContainer: "#shared-list-modal",
         sharedList: "#shared-list",
         sharedListContinue: "#shared-list-continue",
-        sharedListSkip: ".shared-list-skip"
+        sharedListSkip: ".shared-list-skip",
+        settings: {
+            minBatchSize: '#min-batch-size',
+            maxBatchSize: '#max-batch-size'
+        }
     }
 });
 
@@ -514,3 +518,10 @@ var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
     }
 });
 /* End sortable favorites */
+
+/* Toggle settings block */
+$(".toggle").on('click', function() {
+    $($(this).attr("href")).slideToggle();
+    return false;
+});
+
