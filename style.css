@@ -264,3 +264,8 @@ button.disabled:hover {
     margin:0 0.2em;
 }
 
+#settings {
+    display:none;
+    overflow:hidden;
+}
+

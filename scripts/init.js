@@ -514,3 +514,10 @@ var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
     }
 });
 /* End sortable favorites */
+
+/* Toggle settings block */
+$(".toggle").on('click', function() {
+    $($(this).attr("href")).slideToggle();
+    return false;
+});
+
