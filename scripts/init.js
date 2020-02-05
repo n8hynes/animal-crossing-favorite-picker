@@ -169,7 +169,7 @@ var items = [
     {id: 'francine', name: 'Francine', image: 'images/francine.png'},
     {id: 'frank', name: 'Frank', image: 'images/frank.png'},
     {id: 'freckles', name: 'Freckles', image: 'images/freckles.png'},
-    {id: 'freye', name: 'Freye', image: 'images/freye.png'},
+    {id: 'freya', name: 'Freya', image: 'images/freya.png'},
     {id: 'friga', name: 'Friga', image: 'images/friga.png'},
     {id: 'frita', name: 'Frita', image: 'images/frita.png'},
     {id: 'frobert', name: 'Frobert', image: 'images/frobert.png'},
