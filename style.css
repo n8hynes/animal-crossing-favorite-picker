@@ -286,3 +286,8 @@ button.disabled:hover {
 #footer {
     font-size:smaller;
 }
+
+#footer ul{
+    list-style:none;
+    padding:0;
+}
