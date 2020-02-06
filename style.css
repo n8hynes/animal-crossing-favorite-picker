@@ -7,6 +7,13 @@ body {
     font-size:10pt;
     margin:0;
     padding:10px;
+    width:100%;
+    max-width:1400px;
+}
+
+html {
+    display:flex;
+    justify-content:center;
 }
 
 a:link, a:visited {
