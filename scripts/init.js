@@ -479,6 +479,7 @@ var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc", "nh"];
 
 var myPicker = new picker.Picker({
     items: items,
+    shortcodeLength: 2,
     defaultSettings: {
         minBatchSize: 2,
         maxBatchSize: 20,
