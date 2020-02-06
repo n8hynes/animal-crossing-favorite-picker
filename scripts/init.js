@@ -573,3 +573,5 @@ $("#games-all").on('change', function() {
     pickerUI.update(true, 'setting');
 });
 
+document.getElementById("reset").addEventListener("click", () => {pickerUI.reset()});
+
