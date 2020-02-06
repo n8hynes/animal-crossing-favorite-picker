@@ -273,3 +273,15 @@ button.disabled:hover {
     width:3em;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: none;
+    padding-top:1em;
+    padding-bottom:1em;
+    text-align:center;
+    font-size:smaller;
+}
