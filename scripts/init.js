@@ -525,6 +525,9 @@ var pickerUI = new PickerUI(myPicker, {
             games: ".games",
             includeJPN: "#include-jpn"
         }
+    },
+    onUpdate: function(updateType) {
+        setPickerWidth();
     }
 });
 
@@ -579,4 +582,36 @@ $("#games-all").on('change', function() {
 });
 
 document.getElementById("reset").addEventListener("click", () => {pickerUI.reset()});
+
+function setPickerWidth() {
+    var evaluating = myPicker.state.arrays.evaluating;
+    pickerUI.elem.evaluating.width(evaluating.length ? getBatchWidth(evaluating.length, 5) * (pickerUI.elem.evaluating.children().width() + 6) : '100%');
+}
+
+$(window).on('resize', setPickerWidth);
+
+function getBatchWidth(batchSize, maxWidth) {
+    /**
+     * Calculate how many sprites wide the display area for the Pokémon
+     * should be, for the given batch size.
+     * We want the closest thing possible to a square, but prefer perfect
+     * rectangles to imperfect squares.
+     */
+    // First, factor the batch size.
+    var root = Math.sqrt(batchSize);
+    var i, factor = 1;
+    for (i = 2; i <= root; i++) {
+        // The highest number up to i that batchSize is divisible by is factor.
+        if (batchSize % i === 0) {
+            factor = i;
+        }
+    }
+    // If this would lead to the width being more than three times greater than the height, use the same batch width as the number above.
+    if (3 * factor < batchSize / factor) {
+        return getBatchWidth(batchSize + 1, maxWidth);
+    }
+    else {
+        return Math.min(5, batchSize / factor);
+    }
+}
 
