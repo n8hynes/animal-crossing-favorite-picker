@@ -475,8 +475,30 @@ var items = [
     {id: 'zucker', name: 'Zucker', image: 'images/zucker.png', shortcode: 'sd', species: 'Octopus', gender: 'Male', personality: 'Lazy', games: ['nl', 'hhd', 'nh'], special: false}
 ]
 
+var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc", "nh"];
+
 var myPicker = new picker.Picker({
-    items: items
+    items: items,
+    defaultSettings: {
+        minBatchSize: 2,
+        maxBatchSize: 20,
+        games: acgames
+    },
+    getFilteredItems: function(settings) {
+        var filteredList = [];
+        for (var i = 0; i < items.length; i++) {
+            // Check if any games are included in current filter:
+            var gameMatch = false;
+            for (var j = 0; j < items[i].games.length; j++) {
+                if (settings.games.indexOf(items[i].games[j]) != -1) {
+                    gameMatch = true;
+                    break;
+                }
+            }
+            if (gameMatch) filteredList.push(items[i].id);
+        }
+        return filteredList;
+    }
 });
 
 var pickerUI = new PickerUI(myPicker, {
@@ -494,7 +516,8 @@ var pickerUI = new PickerUI(myPicker, {
         sharedListSkip: ".shared-list-skip",
         settings: {
             minBatchSize: '#min-batch-size',
-            maxBatchSize: '#max-batch-size'
+            maxBatchSize: '#max-batch-size',
+            games: ".games"
         }
     }
 });
@@ -524,5 +547,28 @@ var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
 $(".toggle").on('click', function() {
     $($(this).attr("href")).slideToggle();
     return false;
+});
+
+/* Games filter */
+pickerUI.elem.settings.games.on('change', function() {
+    var games = pickerUI.getSetting('games');
+
+    if (games.length < acgames.length && games.length > 0) {
+        $("#games-all").prop("indeterminate", true);
+    } else {
+        $("#games-all").prop("indeterminate", false);
+    }
+
+    if (games.length === acgames.length) {
+        $("#games-all").prop("checked", true);
+    } else if (games.length === 0) {
+        $("#games-all").prop("checked", false);
+    }
+});
+
+$("#games-all").on('change', function() {
+    pickerUI.setSetting('games', $(this).prop("checked") ? acgames : []);
+    myPicker.setSettings(pickerUI.getSettings());
+    pickerUI.update(true, 'setting');
 });
 
