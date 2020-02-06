@@ -615,3 +615,13 @@ function getBatchWidth(batchSize, maxWidth) {
     }
 }
 
+/* Background colors */
+
+function changeColor(event) {
+    document.body.style.backgroundImage = event.target.value;
+}
+
+for (var button of document.getElementsByName("bg-color")) {
+    button.addEventListener('change', changeColor);
+}
+

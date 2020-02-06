@@ -1,5 +1,7 @@
 body {
     background:#FFF;
+    background-image:url('bg-images/lt-blue.png');
+    background-repeat:repeat;
     color:#000;
     font-family:verdana, sans-serif;
     font-size:10pt;
