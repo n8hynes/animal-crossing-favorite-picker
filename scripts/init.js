@@ -585,7 +585,7 @@ document.getElementById("reset").addEventListener("click", () => {pickerUI.reset
 
 function setPickerWidth() {
     var evaluating = myPicker.state.arrays.evaluating;
-    pickerUI.elem.evaluating.width(evaluating.length ? getBatchWidth(evaluating.length, 5) * (pickerUI.elem.evaluating.children().width() + 6) : '100%');
+    pickerUI.elem.evaluating.width(evaluating.length ? getBatchWidth(evaluating.length, 5) * (pickerUI.elem.evaluating.children().width() + 12) : '100%');
 }
 
 $(window).on('resize', setPickerWidth);
