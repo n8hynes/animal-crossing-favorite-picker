@@ -556,6 +556,13 @@ var myPicker = new picker.Picker({
         mode: "villagers",
         background: "lt-blue"
     },
+    onLoadState: function(missingItems, extraItems) {
+        $(function() {
+            var $welcome = $('<p class="info">Welcome back! Your previous state has been loaded. If you would like to start from scratch, please click this button: </p>').append(pickerUI.makeResetButton());
+            $("h1").next(".info").remove();
+            $("h1").after($welcome);
+        });
+    },
     shouldIncludeItem: function(item, settings) {
 
         // Villager/Special/Both filter. Other filters do not apply to special characters.
