@@ -303,3 +303,7 @@ button.disabled:hover {
     display:block;
     font-size:smaller;
 }
+
+hr {
+    border: 1px solid #CCC;
+}

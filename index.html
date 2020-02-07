@@ -19,19 +19,19 @@
 <div id="settings">
 <h2>Settings</h2>
 
+<p><label>Minimum batch size: <input type="number" id="min-batch-size" value="2" min="2" max="20" step="1"></label>
+<span class="help-text">The minimum number of characters shown at a time. If there are fewer characters than the minimum left in the round, you will see fewer than the minimum.</span></p>
+<p><label>Maximum batch size: <input type="number" id="max-batch-size" value="20" min="2" max="20" step="1"></label>
+<span class="help-text">The maximum number of characters shown at a time. When there are few characters left in a round, you'll see fewer than the maximum, but greater than the minimum. Reducing the maximum batch size may make it easier to pick, but it will also take longer to get through each round. If the minimum batch size is greater than the maximum, the minimum number will be shown.</span></p>
+
+<hr>
+
 <p>Mode:
 <label><input type="radio" class="mode" name="special" value="villagers" checked>Only Villagers</label>
 <label><input type="radio" class="mode" name="special" value="special">Only Special Characters</label>
 <label><input type="radio" class="mode" name="special" value="both">Both</label>
 <span class="help-text">Display only regular villagers, only special characters, or both. Other filters do not apply to special characters.</span></p>
 
-<p>Manual reset: <button id="reset">Reset</button>
-<span class="help-text">Resets all your progress. Careful!</span></p>
-
-<p><label>Minimum batch size: <input type="number" id="min-batch-size" value="2" min="2" max="20" step="1"></label>
-<span class="help-text">The minimum number of characters shown at a time. If there are fewer characters than the minimum left in the round, you will see fewer than the minimum.</span></p>
-<p><label>Maximum batch size: <input type="number" id="max-batch-size" value="20" min="2" max="20" step="1"></label>
-<span class="help-text">The maximum number of characters shown at a time. When there are few characters left in a round, you'll see fewer than the maximum, but greater than the minimum. Reducing the maximum batch size may make it easier to pick, but it will also take longer to get through each round. If the minimum batch size is greater than the maximum, the minimum number will be shown.</span></p>
 <p>Games to include:
 <label>(<input type="checkbox" id="games-all" checked> Select all)</label>
 <label><input type="checkbox" class="games" value="dnm" checked>Doubutsu no Mori</label>,
@@ -47,6 +47,11 @@
 
 <p><label>Include Japanese-only villagers: <input type="checkbox" id="include-jpn" checked></label>
 <span class="help-text">Some characters never made it out of Japan. De-select this box to hide those characters.</span></p>
+
+<hr>
+
+<p>Manual reset: <button id="reset">Reset</button>
+<span class="help-text">Resets all your progress. Careful!</span></p>
 
 <p>Background color:
 <label><input type="radio" id="bg-lt-blue" name="bg-color" value="url('bg-images/lt-blue.png')" checked>Light Blue</label>,
