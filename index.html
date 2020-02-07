@@ -2,22 +2,72 @@
 <html>
 <head>
 <meta name="viewport" content="initial-scale=1.0">
-<title>Picker</title>
+<title>Favorite Animal Crossing Villager Picker</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<h1>Picker</h1>
 
-<p>You can include any content you want here.</p>
+<div id="header">
+<h1>Favorite Animal Crossing Villager Picker</h1>
+
+<p>There are so many animal crossing villagers, how can you possibly pick your favorites without vigorous testing? Use this tool to find your personal favorites!</p>
+
 <p><a href="#settings" class="toggle">Click here to show/hide settings.</a></p>
 
 <div id="settings">
 <h2>Settings</h2>
 
-<p>Settings text here.</p>
+<p><label>Minimum batch size: <input type="number" id="min-batch-size" value="2" min="2" max="20" step="1"></label>
+<span class="help-text">The minimum number of characters shown at a time. If there are fewer characters than the minimum left in the round, you will see fewer than the minimum.</span></p>
+<p><label>Maximum batch size: <input type="number" id="max-batch-size" value="20" min="2" max="20" step="1"></label>
+<span class="help-text">The maximum number of characters shown at a time. When there are few characters left in a round, you'll see fewer than the maximum, but greater than the minimum. Reducing the maximum batch size may make it easier to pick, but it will also take longer to get through each round. If the minimum batch size is greater than the maximum, the minimum number will be shown.</span></p>
 
-<p><label>Minimum batch size: <input type="number" id="min-batch-size" value="2" min="2" max="20" step="1"></label></p>
-<p><label>Maximum batch size: <input type="number" id="max-batch-size" value="20" min="2" max="20" step="1"></label></p>
+<hr>
+
+<p>Mode:
+<label><input type="radio" class="mode" name="special" value="villagers" checked>Only Villagers</label>
+<label><input type="radio" class="mode" name="special" value="special">Only Special Characters</label>
+<label><input type="radio" class="mode" name="special" value="both">Both</label>
+<span class="help-text">Display only regular villagers, only special characters, or both. Other filters do not apply to special characters.</span></p>
+
+<p>Games to include:
+<label>(<input type="checkbox" id="games-all" checked> Select all)</label>
+<label><input type="checkbox" class="games" value="dnm" checked>Doubutsu no Mori</label>,
+<label><input type="checkbox" class="games" value="ac" checked>Animal Crossing</label>,
+<label><input type="checkbox" class="games" value="ww" checked>Wild World</label>,
+<label><input type="checkbox" class="games" value="cf" checked>City Folk</label>,
+<label><input type="checkbox" class="games" value="nl" checked>New Leaf</label>,
+<label><input type="checkbox" class="games" value="hhd" checked>Happy Home Designer</label>,
+<label><input type="checkbox" class="games" value="pc" checked>Pocket Camp</label>,
+<label><input type="checkbox" class="games" value="nh" checked>New Horizons*</label>
+<span class="help-text">Characters that have appeared in at least one of the selected games will appear. * Note that the New Horizons list will be incomplete until release.</span>
+</p>
+
+<p><label>Include Japanese-only villagers: <input type="checkbox" id="include-jpn" checked></label>
+<span class="help-text">Some characters never made it out of Japan. De-select this box to hide those characters.</span></p>
+
+<hr>
+
+<p>Manual reset: <button id="reset">Reset</button>
+<span class="help-text">Resets all your progress. Careful!</span></p>
+
+<p>Background color:
+<label><input type="radio" class="bg-color"  name="bg-color" value="lt-blue">Light Blue</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="dk-blue">Dark Blue</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="pink">Pink</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="purple">Purple</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="yellow">Yellow</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="orange">Orange</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="green">Green</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="blue">Blue</label>,
+<label><input type="radio" class="bg-color" name="bg-color" value="none">None</label>
+<span class="help-text">Select the color of the background. Select 'none' for a plain white background.</span>
+</p>
+
+
+</div>
 
 </div>
 
@@ -58,5 +108,16 @@
 <p class="buttons"><button id="shared-list-continue">Continue from this list</button> <button class="shared-list-skip">Make my own list</button></p>
 </div>
 <script src="scripts/init.js"></script>
+
+<div id="footer">
+<p><strong>Credits</strong></p>
+<ul>
+<li>Original idea: <a href="https://www.dragonflycave.com/favorite.html">Favorite Pokemon Picker</a></li>
+<li>Code forked from: <a href="https://github.com/antialiasis/favorite-picker">antialias on github</a></li>
+<li>Background images: <a href="https://shibatown.tumblr.com/post/162593210957/a-repeating-animal-crossing-themed-background">shibatown on tumblr</a></li>
+<li>Data retrieved from: <a href="https://nookipedia.com/">Nookipedia</a></li>
+</ul>
+</div>
+
 </body>
 </html>
