@@ -553,7 +553,8 @@ var myPicker = new picker.Picker({
         maxBatchSize: 20,
         games: acgames,
         includeJPN: true,
-        mode: "villagers"
+        mode: "villagers",
+        background: "lt-blue"
     },
     shouldIncludeItem: function(item, settings) {
 
@@ -597,6 +598,7 @@ var pickerUI = new PickerUI(myPicker, {
             games: ".games",
             includeJPN: "#include-jpn",
             mode: ".mode",
+            background: ".bg-color"
         }
     },
     onUpdate: function(updateType) {
@@ -605,6 +607,7 @@ var pickerUI = new PickerUI(myPicker, {
 });
 
 pickerUI.initialize();
+changeColor(myPicker.state.settings.background);
 
 /* Sortable favorites - you can safely remove this, and the Sortable.min.js script, if you don't want to be able to sort your favorite list. */
 var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
@@ -665,7 +668,7 @@ $(window).on('resize', setPickerWidth);
 
 function getBatchWidth(batchSize, maxWidth) {
     /**
-     * Calculate how many sprites wide the display area for the Pokémon
+     * Calculate how many sprites wide the display area for the items
      * should be, for the given batch size.
      * We want the closest thing possible to a square, but prefer perfect
      * rectangles to imperfect squares.
@@ -690,11 +693,17 @@ function getBatchWidth(batchSize, maxWidth) {
 
 /* Background colors */
 
-function changeColor(event) {
-    document.body.style.backgroundImage = event.target.value;
+function changeColor(color) {
+    var imagestr;
+    if (color != "none") {
+        imagestr = "url(bg-images/" + color + ".png)";
+    } else {
+        imagestr = "none";
+    }
+    document.body.style.backgroundImage = imagestr;
 }
 
 for (var button of document.getElementsByName("bg-color")) {
-    button.addEventListener('change', changeColor);
+    button.addEventListener('change', () => {changeColor(event.target.value)});
 }
 
