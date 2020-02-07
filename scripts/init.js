@@ -546,7 +546,7 @@ var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc", "nh"];
 
 var myPicker = new picker.Picker({
     items: items,
-    localStorageKey: 'picker-state',
+    localStorageKey: 'ac-picker-state',
     shortcodeLength: 2,
     defaultSettings: {
         minBatchSize: 2,
