@@ -472,7 +472,74 @@ var items = [
     {id: 'yuka', name: 'Yuka', image: 'images/yuka.png', shortcode: 'sa', species: 'Koala', gender: 'Female', personality: 'Snooty', games: ['dnm', 'ac', 'ww', 'cf', 'nl', 'hhd', 'pc'], special: false, jpn: false},
     {id: 'zell', name: 'Zell', image: 'images/zell.png', shortcode: 'sb', species: 'Deer', gender: 'Male', personality: 'Smug', games: ['nl', 'hhd', 'pc'], special: false, jpn: false},
     {id: 'zoe', name: 'Zoe', image: 'images/zoe.png', shortcode: 'sc', species: 'Anteater', gender: 'Female', personality: 'Normal', games: ['dnm', 'ac'], special: false, jpn: false},
-    {id: 'zucker', name: 'Zucker', image: 'images/zucker.png', shortcode: 'sd', species: 'Octopus', gender: 'Male', personality: 'Lazy', games: ['nl', 'hhd', 'nh'], special: false, jpn: false}
+    {id: 'zucker', name: 'Zucker', image: 'images/zucker.png', shortcode: 'sd', species: 'Octopus', gender: 'Male', personality: 'Lazy', games: ['nl', 'hhd', 'nh'], special: false, jpn: false},
+    {id: 'blathers', name: 'Blathers', image: 'images/blathers.png', shortcode: 'se', special: true},
+    {id: 'booker', name: 'Booker', image: 'images/booker.png', shortcode: 'sf', special: true},
+    {id: 'celeste', name: 'Celeste', image: 'images/celeste.png', shortcode: 'sg', special: true},
+    {id: 'copper', name: 'Copper', image: 'images/copper.png', shortcode: 'sh', special: true},
+    {id: 'gyroid', name: 'Gyroid', image: 'images/gyroid.png', shortcode: 'si', special: true},
+    {id: 'isabelle', name: 'Isabelle', image: 'images/isabelle.png', shortcode: 'sj', special: true},
+    {id: 'pelly', name: 'Pelly', image: 'images/pelly.png', shortcode: 'sk', special: true},
+    {id: 'pete', name: 'Pete', image: 'images/pete.png', shortcode: 'sl', special: true},
+    {id: 'phyllis', name: 'Phyllis', image: 'images/phyllis.png', shortcode: 'sm', special: true},
+    {id: 'porter', name: 'Porter', image: 'images/porter.png', shortcode: 'sn', special: true},
+    {id: 'tortimer', name: 'Tortimer', image: 'images/tortimer.png', shortcode: 'so', special: true},
+    {id: 'beppe', name: 'Beppe', image: 'images/beppe.png', shortcode: 'sp', special: true},
+    {id: 'brewster', name: 'Brewster', image: 'images/brewster.png', shortcode: 'sq', special: true},
+    {id: 'carlo', name: 'Carlo', image: 'images/carlo.png', shortcode: 'sr', special: true},
+    {id: 'cyrus', name: 'Cyrus', image: 'images/cyrus.png', shortcode: 'ss', special: true},
+    {id: 'digby', name: 'Digby', image: 'images/digby.png', shortcode: 'st', special: true},
+    {id: 'dr-shrunk', name: 'Dr. Shrunk', image: 'images/dr-shrunk.png', shortcode: 'su', special: true},
+    {id: 'frillard', name: 'Frillard', image: 'images/frillard.png', shortcode: 'sv', special: true},
+    {id: 'giovanni', name: 'Giovanni', image: 'images/giovanni.png', shortcode: 'sw', special: true},
+    {id: 'gracie', name: 'Gracie', image: 'images/gracie.png', shortcode: 'sx', special: true},
+    {id: 'harriet', name: 'Harriet', image: 'images/harriet.png', shortcode: 'sy', special: true},
+    {id: 'harvey', name: 'Harvey', image: 'images/harvey.png', shortcode: 'sz', special: true},
+    {id: 'katrina', name: 'Katrina', image: 'images/katrina.png', shortcode: 'ta', special: true},
+    {id: 'kicks', name: 'Kicks', image: 'images/kicks.png', shortcode: 'tb', special: true},
+    {id: 'labelle', name: 'Labelle', image: 'images/labelle.png', shortcode: 'tc', special: true},
+    {id: 'leif', name: 'Leif', image: 'images/leif.png', shortcode: 'td', special: true},
+    {id: 'lloid', name: 'Lloid', image: 'images/lloid.png', shortcode: 'te', special: true},
+    {id: 'luna', name: 'Luna', image: 'images/luna.png', shortcode: 'tf', special: true},
+    {id: 'lyle', name: 'Lyle', image: 'images/lyle.png', shortcode: 'tg', special: true},
+    {id: 'lottie', name: 'Lottie', image: 'images/lottie.png', shortcode: 'th', special: true},
+    {id: 'mabel', name: 'Mabel', image: 'images/mabel.png', shortcode: 'ti', special: true},
+    {id: 'redd', name: 'Redd', image: 'images/redd.png', shortcode: 'tj', special: true},
+    {id: 'reese', name: 'Reese', image: 'images/reese.png', shortcode: 'tk', special: true},
+    {id: 'rover', name: 'Rover', image: 'images/rover.png', shortcode: 'tl', special: true},
+    {id: 'sable', name: 'Sable', image: 'images/sable.png', shortcode: 'tm', special: true},
+    {id: 'timmy-tommy', name: 'Timmy & Tommy', image: 'images/timmy-tommy.png', shortcode: 'tn', special: true},
+    {id: 'tom-nook', name: 'Tom Nook', image: 'images/tom-nook.png', shortcode: 'to', special: true},
+    {id: 'grams', name: 'Grams', image: 'images/grams.png', shortcode: 'tp', special: true},
+    {id: 'kapp-n', name: 'Kapp\'n', image: 'images/kapp-n.png', shortcode: 'tq', special: true},
+    {id: 'leila', name: 'Leila', image: 'images/leila.png', shortcode: 'tr', special: true},
+    {id: 'leilani', name: 'Leilani', image: 'images/leilani.png', shortcode: 'ts', special: true},
+    {id: 'cornimer', name: 'Cornimer', image: 'images/cornimer.png', shortcode: 'tt', special: true},
+    {id: 'franklin', name: 'Franklin', image: 'images/franklin.png', shortcode: 'tu', special: true},
+    {id: 'jack', name: 'Jack', image: 'images/jack.png', shortcode: 'tv', special: true},
+    {id: 'jingle', name: 'Jingle', image: 'images/jingle.png', shortcode: 'tw', special: true},
+    {id: 'pave', name: 'Pave', image: 'images/pave.png', shortcode: 'tx', special: true},
+    {id: 'zipper-t-bunny', name: 'Zipper T. Bunny', image: 'images/zipper-t-bunny.png', shortcode: 'ty', special: true},
+    {id: 'blanca', name: 'Blanca', image: 'images/blanca.png', shortcode: 'tz', special: true},
+    {id: 'chip', name: 'Chip', image: 'images/chip.png', shortcode: 'ua', special: true},
+    {id: 'don-resetti', name: 'Don Resetti', image: 'images/don-resetti.png', shortcode: 'ub', special: true},
+    {id: 'gulliver', name: 'Gulliver', image: 'images/gulliver.png', shortcode: 'uc', special: true},
+    {id: 'farley', name: 'Farley', image: 'images/farley.png', shortcode: 'ud', special: true},
+    {id: 'joan', name: 'Joan', image: 'images/joan.png', shortcode: 'ue', special: true},
+    {id: 'kaitlin', name: 'Kaitlin', image: 'images/kaitlin.png', shortcode: 'uf', special: true},
+    {id: 'katie', name: 'Katie', image: 'images/katie.png', shortcode: 'ug', special: true},
+    {id: 'k-k-slider', name: 'K.K. Slider', image: 'images/k-k-slider.png', shortcode: 'uh', special: true},
+    {id: 'mr-resetti', name: 'Mr. Resetti', image: 'images/mr-resetti.png', shortcode: 'ui', special: true},
+    {id: 'nat', name: 'Nat', image: 'images/nat.png', shortcode: 'uj', special: true},
+    {id: 'pascal', name: 'Pascal', image: 'images/pascal.png', shortcode: 'uk', special: true},
+    {id: 'phineas', name: 'Phineas', image: 'images/phineas.png', shortcode: 'ul', special: true},
+    {id: 'serena', name: 'Serena', image: 'images/serena.png', shortcode: 'um', special: true},
+    {id: 'saharah', name: 'Saharah', image: 'images/saharah.png', shortcode: 'un', special: true},
+    {id: 'snow-people', name: 'Snow People', image: 'images/snow-people.png', shortcode: 'uo', special: true},
+    {id: 'wendell', name: 'Wendell', image: 'images/wendell.png', shortcode: 'up', special: true},
+    {id: 'wishy', name: 'Wishy', image: 'images/wishy.png', shortcode: 'uq', special: true},
+    {id: 'wisp', name: 'Wisp', image: 'images/wisp.png', shortcode: 'ur', special: true},
+    {id: 'yellow-bird', name: 'Yellow bird', image: 'images/yellow-bird.png', shortcode: 'us', special: true}
 ]
 
 var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc", "nh"];
@@ -485,25 +552,29 @@ var myPicker = new picker.Picker({
         minBatchSize: 2,
         maxBatchSize: 20,
         games: acgames,
-        includeJPN: true
+        includeJPN: true,
+        mode: "villagers"
     },
-    getFilteredItems: function(settings) {
-        var filteredList = [];
-        for (var i = 0; i < items.length; i++) {
-            // Check if any games are included in current filter:
-            var gameMatch = false;
-            var jpnMatch = false;
-            for (var j = 0; j < items[i].games.length; j++) {
-                if (items[i].jpn == true) jpnMatch = true;
-                if (settings.games.indexOf(items[i].games[j]) != -1) {
-                    gameMatch = true;
-                    break;
-                }
-            }
-            if (jpnMatch && (settings.includeJPN == false)) continue;
-            if (gameMatch) filteredList.push(items[i].id);
+    shouldIncludeItem: function(item, settings) {
+
+        // Villager/Special/Both filter. Other filters do not apply to special characters.
+        if (item.special) {
+            if (settings.mode == "special" || settings.mode == "both") return true;
+            else return false;
+        } else {
+            if (settings.mode == "special") return false;
         }
-        return filteredList;
+
+        // Check for japanese-exclusive characters.
+        if (item.jpn && !settings.includeJPN) return false;
+
+        // Game filter
+        for (var i = 0; i < item.games.length; i++) {
+            if (settings.games.indexOf(item.games[i]) !== -1) return true;
+        }
+
+        // Default false if not included by other settings
+        return false;
     }
 });
 
@@ -524,7 +595,8 @@ var pickerUI = new PickerUI(myPicker, {
             minBatchSize: '#min-batch-size',
             maxBatchSize: '#max-batch-size',
             games: ".games",
-            includeJPN: "#include-jpn"
+            includeJPN: "#include-jpn",
+            mode: ".mode",
         }
     },
     onUpdate: function(updateType) {

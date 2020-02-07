@@ -14,13 +14,16 @@
 
 <p>There are so many animal crossing villagers, how can you possibly pick your favorites without vigorous testing? Use this tool to find your personal favorites!</p>
 
-<p>Expand the settings menu for more options and filters.</p>
 <p><a href="#settings" class="toggle">Click here to show/hide settings.</a></p>
 
 <div id="settings">
 <h2>Settings</h2>
 
-<p>The following settings change how the picker works.</p>
+<p>Mode:
+<label><input type="radio" class="mode" name="special" value="villagers" checked>Only Villagers</label>
+<label><input type="radio" class="mode" name="special" value="special">Only Special Characters</label>
+<label><input type="radio" class="mode" name="special" value="both">Both</label>
+<span class="help-text">Display only regular villagers, only special characters, or both. Other filters do not apply to special characters.</span></p>
 
 <p>Manual reset: <button id="reset">Reset</button>
 <span class="help-text">Resets all your progress. Careful!</span></p>
