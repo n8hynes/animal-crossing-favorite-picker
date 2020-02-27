@@ -610,6 +610,12 @@ var pickerUI = new PickerUI(myPicker, {
     },
     onUpdate: function(updateType) {
         setPickerWidth();
+
+        var total = this.picker.state.items.length;
+        var favorites = this.picker.state.arrays.favorites.length;
+        var eliminated = this.picker.state.arrays.eliminated.length;
+        var remaining = Math.max(0, total - favorites - eliminated - 1);
+        $("#remaining").text(remaining);
     }
 });
 

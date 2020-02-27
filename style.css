@@ -307,3 +307,8 @@ button.disabled:hover {
 hr {
     border: 1px solid #CCC;
 }
+
+.picker-info {
+    text-align:center;
+    font-size:smaller;
+}
