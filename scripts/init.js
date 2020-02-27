@@ -542,7 +542,8 @@ var items = [
     {id: 'yellow-bird', name: 'Yellow bird', image: 'images/yellow-bird.png', shortcode: 'us', special: true}
 ]
 
-var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc", "nh"];
+var acgames = ["dnm", "ac", "ww", "cf", "nl", "hhd", "pc"];
+var persons = ["Cranky", "Jock", "Lazy", "Smug", "Normal", "Peppy", "Snooty", "Uchi"];
 
 var myPicker = new picker.Picker({
     items: items,
@@ -552,6 +553,7 @@ var myPicker = new picker.Picker({
         minBatchSize: 2,
         maxBatchSize: 20,
         games: acgames,
+        personalities: persons,
         includeJPN: true,
         mode: "villagers",
         background: "lt-blue"
@@ -577,12 +579,17 @@ var myPicker = new picker.Picker({
         if (item.jpn && !settings.includeJPN) return false;
 
         // Game filter
+        var foundMatch = false;
         for (var i = 0; i < item.games.length; i++) {
-            if (settings.games.indexOf(item.games[i]) !== -1) return true;
+            if (settings.games.indexOf(item.games[i]) !== -1) foundMatch = true;
         }
+        if (!foundMatch) return false;
 
-        // Default false if not included by other settings
-        return false;
+        // Personality filter
+       if (settings.personalities.indexOf(item.personality) == -1) return false; 
+
+        // Default true if not excluded by other settings
+        return true;
     }
 });
 
@@ -603,6 +610,7 @@ var pickerUI = new PickerUI(myPicker, {
             minBatchSize: '#min-batch-size',
             maxBatchSize: '#max-batch-size',
             games: ".games",
+            personalities: ".personalities",
             includeJPN: "#include-jpn",
             mode: ".mode",
             background: ".bg-color"
@@ -621,6 +629,9 @@ var pickerUI = new PickerUI(myPicker, {
 
 pickerUI.initialize();
 changeColor(myPicker.state.settings.background);
+updateSelectAll(pickerUI.getSetting('games'), $("#games-all"), acgames);
+updateSelectAll(pickerUI.getSetting('personalities'), $("#personalities-all"), persons);
+
 
 /* Sortable favorites - you can safely remove this, and the Sortable.min.js script, if you don't want to be able to sort your favorite list. */
 var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
@@ -647,22 +658,28 @@ $(".toggle").on('click', function() {
     return false;
 });
 
-/* Games filter */
+/* Select-all filters */
 pickerUI.elem.settings.games.on('change', function() {
-    var games = pickerUI.getSetting('games');
-
-    if (games.length < acgames.length && games.length > 0) {
-        $("#games-all").prop("indeterminate", true);
-    } else {
-        $("#games-all").prop("indeterminate", false);
-    }
-
-    if (games.length === acgames.length) {
-        $("#games-all").prop("checked", true);
-    } else if (games.length === 0) {
-        $("#games-all").prop("checked", false);
-    }
+    updateSelectAll(pickerUI.getSetting('games'), $("#games-all"), acgames);
 });
+
+pickerUI.elem.settings.personalities.on('change', function() {
+    updateSelectAll(pickerUI.getSetting('personalities'), $("#personalities-all"), persons);
+});
+
+function updateSelectAll(setting, allCheckbox, itemList) {
+    if (setting.length < itemList.length && setting.length > 0) {
+        allCheckbox.prop("indeterminate", true);
+    } else {
+        allCheckbox.prop("indeterminate", false);
+    }
+
+    if (setting.length === itemList.length) {
+        allCheckbox.prop("checked", true);
+    } else if (setting.length === 0) {
+        allCheckbox.prop("checked", false);
+    }
+}
 
 $("#games-all").on('change', function() {
     pickerUI.setSetting('games', $(this).prop("checked") ? acgames : []);
@@ -670,8 +687,16 @@ $("#games-all").on('change', function() {
     pickerUI.update(true, 'setting');
 });
 
+$("#personalities-all").on('change', function() {
+    pickerUI.setSetting('personalities', $(this).prop("checked") ? persons : []);
+    myPicker.setSettings(pickerUI.getSettings());
+    pickerUI.update(true, 'setting');
+});
+
+/* Make reset button  */
 document.getElementById("reset").addEventListener("click", () => {pickerUI.reset()});
 
+/* Picker Width */
 function setPickerWidth() {
     var evaluating = myPicker.state.arrays.evaluating;
     pickerUI.elem.evaluating.width(evaluating.length ? getBatchWidth(evaluating.length, 5) * (pickerUI.elem.evaluating.children().width() + 12) : '100%');

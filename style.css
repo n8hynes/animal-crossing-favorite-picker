@@ -312,3 +312,7 @@ hr {
     text-align:center;
     font-size:smaller;
 }
+
+label {
+    display:inline-block;
+}
